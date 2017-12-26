@@ -6,10 +6,12 @@
                 <!-- CHAINING MULTIPLE FILTERS -->
                 <p>{{ text | toUppercase | to-lowercase }}</p>
                 <hr>
+                <!-- FILTER -->
                 <input v-model="filterText">
                 <ul>
                     <li v-for="fruit in filteredFruits">{{ fruit }}</li>
                 </ul>
+                <!-- FILTER -->
             </div>
         </div>
     </div>
@@ -21,6 +23,7 @@
             return {
                 text: 'Hello there!',
                 fruits: ['Apple', 'Banana', 'Mango', 'Melon'],
+                // FILTERTEXT
                 filterText: ''
             }
         },
@@ -29,6 +32,7 @@
                 return value.toUpperCase();
             }
         },
+        //COMPUTED PROPERTY
         computed: {
             filteredFruits() {
                 return this.fruits.filter((element) => {
@@ -36,6 +40,7 @@
                 });
             }
         }
+        //COMPUTED PROPERTY
     }
 </script>
 
